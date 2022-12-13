@@ -10,8 +10,8 @@ export const Profile = ({}: ProfileProps) => {
   const [text, count] = useTypewriter({
     words: [
       "<h1>Olá, me chamo Larissa</h1>",
-      "<h2>Sou dev Javascript/TypeScript</h2>",
-      "<strong>Estudante de ciências da computação</strong>",
+      "<h2>Sou dev Javascript + TypeScript</h2>",
+      "<span>Estudante de ciências da computação</span>",
     ],
     loop: true,
     delaySpeed: 1000,
@@ -28,7 +28,7 @@ export const Profile = ({}: ProfileProps) => {
         alt="Profile Pic"
         className="relative rounded-full w-32 y-32 mx-auto object-cover"
       />
-      <div className="flex flex-col items-center justify-center pb-2 z-10">
+      <div className="flex flex-col items-center justify-center px-6 pb-2 z-10">
         <h2 className="uppercase text-sm text-zinc-500 pb-2 tracking-[12px]">
           Software Engineer
         </h2>

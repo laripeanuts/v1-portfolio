@@ -22,7 +22,7 @@ export const ProfileBackground = ({}: ProfileBackgroundProps) => {
       <div className="absolute border border-zinc-600 rounded-full w-[200px] h-[200px] animate-ping mt-52" />
       <div className="absolute border border-zinc-600 rounded-full w-[300px] h-[300px] animate-ping mt-52" />
       <div className="absolute border border-zinc-600 rounded-full w-[500px] h-[500px] animate-ping mt-52" />
-      <div className="absolute border border-[#523db2] rounded-full w-[650px] h-[650px] animate-pulse mt-52 opacity-20" />
+      <div className="absolute border border-primary rounded-full w-[650px] h-[650px] animate-pulse mt-52 opacity-20" />
       <div className="absolute border border-zinc-600 rounded-full w-[800px] h-[800px] animate-ping mt-52" />
     </motion.div>
   );

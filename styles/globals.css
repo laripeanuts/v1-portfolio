@@ -4,6 +4,6 @@
 
 @layer components {
   .btnNav {
-    @apply py-2 px-6 uppercase text-xs tracking-widest text-zinc-500 transition-all duration-300 ease-in-out hover:text-[#523db2] md:text-sm;
+    @apply py-2 px-4 md:px-6 uppercase text-xs tracking-widest text-zinc-500 transition-all duration-300 ease-in-out hover:text-primary md:text-sm;
   }
 }
