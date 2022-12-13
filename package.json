@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "npx prettier --write ./pages/**/*.{js,jsx,ts,tsx} ./components/**/*.{js,jsx,ts,tsx}",
+    "format": "pnpm run lint:fix && pnpm run prettier"
   },
   "dependencies": {
     "@types/node": "18.11.13",
@@ -18,6 +21,7 @@
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",
     "typescript": "4.9.4"
   },
