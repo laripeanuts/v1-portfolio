@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "prettier": "npx prettier --write ./pages/**/*.{js,jsx,ts,tsx} ./components/**/*.{js,jsx,ts,tsx}",
-    "format": "pnpm run lint:fix && pnpm run prettier"
+    "format": "pnpm run lint:fix && pnpm run prettier",
+    "c": "npm run format && npx cz"
   },
   "dependencies": {
     "@types/node": "18.11.13",
