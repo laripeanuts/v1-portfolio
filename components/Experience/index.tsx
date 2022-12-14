@@ -6,7 +6,7 @@ type ExperienceProps = {};
 export const Experience = ({}: ExperienceProps) => {
   return (
     <div className="h-screen flex flex-col relative overflow-hidden text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-zinc-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[15px] text-zinc-500 text-2xl">
         Experiências
       </h3>
       <motion.div
