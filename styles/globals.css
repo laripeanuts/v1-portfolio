@@ -6,4 +6,8 @@
   .btnNav {
     @apply py-2 px-4 md:px-6 uppercase text-xs tracking-widest text-zinc-500 transition-all duration-300 ease-in-out hover:text-primary md:text-sm;
   }
+
+  .contactInput {
+    @apply rounded-md p-2 pl-3 flex-1 outline-none bg-zinc-900 border-b-2 border-zinc-600 focus:border-primary transition-all ease-in-out duration-500;
+  }
 }
