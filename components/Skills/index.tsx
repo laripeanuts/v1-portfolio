@@ -9,7 +9,7 @@ export const Skills = ({}: SkillsProps) => {
       <h3 className="absolute top-20 uppercase tracking-[15px] text-zinc-500 text-2xl">
         Conhecimentos
       </h3>
-      <h4 className="absolute top-28 uppercase tracking-[3px] text-zinc-500 text-sm">
+      <h4 className="absolute top-28 uppercase tracking-[3px] text-zinc-500 text-xs">
         Passe o mouse para ver minha proficiência
       </h4>
       <motion.div
