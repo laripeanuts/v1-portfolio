@@ -36,7 +36,7 @@ export const Profile = ({}: ProfileProps) => {
           <span>{text}</span>
           <Cursor cursorColor="#523db2" />
         </h1>
-        <div className="pt-4 flex w-100">
+        <div className="pt-4 flex w-100  flex-wrap items-center justify-evenly">
           <Link href="#about">
             <div className="btnNav">Sobre</div>
           </Link>

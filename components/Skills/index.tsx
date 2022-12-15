@@ -18,7 +18,7 @@ export const Skills = ({}: SkillsProps) => {
         }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="grid grid-cols-4 gap-6 mt-32 lg:mt-40 lg:grid lg:grid-cols-6 overflow-y-scroll w-fit max-h-[400px] lg:max-h-[600px]"
+        className="grid grid-cols-4 gap-6 mt-32 lg:mt-40 lg:grid lg:grid-cols-6 overflow-x-hidden overflow-y-scroll w-fit max-h-[400px] lg:max-h-[600px] scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary"
       >
         <Skill />
         <Skill />

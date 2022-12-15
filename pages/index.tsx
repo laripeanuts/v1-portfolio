@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>Larissa Rabelo</title>
       </Head>
-      <main className="bg-zinc-800 text-zinc-100 color-zinc-100 h-screen snap snap-y snap-mandatory overflow-scroll z-0">
+      <main className="bg-zinc-800 text-zinc-100 color-zinc-100 h-screen snap snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary">
         <Header />
 
         <section id="profile" className="snap-start">

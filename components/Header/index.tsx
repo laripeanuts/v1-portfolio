@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 
@@ -70,25 +69,23 @@ export const Header = ({}: HeaderProps) => {
       </motion.div>
 
       <div className="uppercase text-sm flex flex-row items-center cursor-pointer hover:text-primary">
-        <Link href="mailto:larissarabelolf@gmail.com">
-          <SocialIcon
-            network="email"
-            bgColor="transparent"
-            target={"_blank"}
-            fgColor={hoverMail ? "#523db2" : "lightgray"}
-            onMouseEnter={() => {
-              setHoverMail(true);
-            }}
-            onMouseLeave={() => {
-              setHoverMail(false);
-            }}
-            style={{
-              transform: hoverMail ? "scale(1.2)" : "scale(1)",
-              transition: "all 0.2s ease-in-out",
-            }}
-          />
-          <span className="hidden md:inline-flex">Entre em contato</span>
-        </Link>
+        <SocialIcon
+          url="#contact"
+          network="email"
+          bgColor="transparent"
+          fgColor={hoverMail ? "#523db2" : "lightgray"}
+          onMouseEnter={() => {
+            setHoverMail(true);
+          }}
+          onMouseLeave={() => {
+            setHoverMail(false);
+          }}
+          style={{
+            transform: hoverMail ? "scale(1.2)" : "scale(1)",
+            transition: "all 0.2s ease-in-out",
+          }}
+        />
+        <span className="hidden md:inline-flex">Entre em contato</span>
       </div>
     </header>
   );

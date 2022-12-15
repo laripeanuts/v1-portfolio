@@ -34,7 +34,7 @@ export const About = ({}: AboutProps) => {
           <span className="underline decoration-primary de">detalhes</span> de
           como cheguei até aqui
         </h2>
-        <p className="text-xs md:text-sm">
+        <p className="text-xs md:text-sm leading-normal">
           Desenvolvo aplicações, principalmente para web. Consigo, através do
           frontend, solucionar problemas, explorar minha criatividade e
           aproveitar as noções de design que adquiri trabalhando dez anos com
@@ -52,11 +52,12 @@ export const About = ({}: AboutProps) => {
           design systems, UI/UX design, apesar de sempre estar adquirindo também
           conhecimentos em âmbitos de backend e mobile. Utilizando o ecossistema
           JavaScript + TypeScript como tecnologias principais para
-          desenvolvimento. O que acredito ser meus pontos fortes em softs kill
-          são: senso de responsabilidade, facilidade em adaptação, trabalho em
-          equipe, autonomia na resolução de problemas e principalmente interesse
-          de aprender e estudar para contribuir no desenvolvimento pessoal e
-          profissional.
+          desenvolvimento. Curso o terceiro semestre de Análise e
+          Desenvolvimento de Sistemas. O que acredito ser meus pontos fortes em
+          softs kill são: senso de responsabilidade, facilidade em adaptação,
+          trabalho em equipe, autonomia na resolução de problemas e
+          principalmente interesse de aprender e estudar para contribuir no
+          desenvolvimento pessoal e profissional.
         </p>
       </motion.div>
     </div>
