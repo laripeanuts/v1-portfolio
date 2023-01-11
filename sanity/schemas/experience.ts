@@ -39,11 +39,6 @@ export const experience = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'phone',
-      title: 'Phone',
-      type: 'string',
-    }),
-    defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',

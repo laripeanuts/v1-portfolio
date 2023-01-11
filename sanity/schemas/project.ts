@@ -20,11 +20,6 @@ export const project = defineType({
       },
     }),
     defineField({
-      name: 'backgroundInfo',
-      title: 'Background Information',
-      type: 'string',
-    }),
-    defineField({
       name: 'summary',
       title: 'Summary',
       type: 'text',
