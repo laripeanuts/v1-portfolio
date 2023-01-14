@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { SkillType } from "../../@types/api";
 import { Skill } from "../Skill";
 
-type SkillsProps = {};
+type SkillsProps = {
+  skills: SkillType[];
+};
 
-export const Skills = ({}: SkillsProps) => {
+export const Skills = ({ skills }: SkillsProps) => {
   return (
     <div className="h-screen flex flex-col relative overflow-hidden text-center md:text-left md:flex-row max-w-7xl px-6 justify-evenly mx-auto items-center">
       <h3 className="absolute top-20 uppercase tracking-[15px] text-zinc-500 text-2xl">

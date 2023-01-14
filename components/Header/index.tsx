@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
+
+import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
-type HeaderProps = {};
+import { SocialType } from "../../@types/api";
 
-export const Header = ({}: HeaderProps) => {
+type HeaderProps = {
+  socials: SocialType[];
+};
+
+export const Header = ({ socials }: HeaderProps) => {
   const [hoverLinkedin, setHoverLinkedin] = useState(false);
   const [hoverGithub, setHoverGithub] = useState(false);
   const [hoverTwitter, setHoverTwitter] = useState(false);

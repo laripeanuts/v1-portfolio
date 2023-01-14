@@ -2,11 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
+import { ProfileType } from "../../@types/api";
 import { ProfileBackground } from "../ProfileBackground";
 
-type ProfileProps = {};
+type ProfileProps = {
+  profile: ProfileType;
+};
 
-export const Profile = ({}: ProfileProps) => {
+export const Profile = ({ profile }: ProfileProps) => {
   const [text, count] = useTypewriter({
     words: [
       "<h1>Olá, me chamo Larissa</h1>",

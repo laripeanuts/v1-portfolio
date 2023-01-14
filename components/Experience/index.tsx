@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { ExperienceType } from "../../@types/api";
 import { ExperienceCard } from "../ExperienceCard";
 
-type ExperienceProps = {};
+type ExperienceProps = {
+  experiences: ExperienceType[];
+};
 
-export const Experience = ({}: ExperienceProps) => {
+export const Experience = ({ experiences }: ExperienceProps) => {
   return (
     <div className="h-screen flex flex-col relative overflow-hidden text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-20 uppercase tracking-[15px] text-zinc-500 text-2xl">
