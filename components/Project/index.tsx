@@ -20,12 +20,22 @@ export const Project = ({ project }: ProjectProps) => {
         alt="HTML"
         width={500}
         height={0}
-        className="w-[250px] lg:w-[300px]"
+        className="w-[250px] lg:w-[400px]"
       />
       <div className="max-w-6xl">
-        <h4 className="text-2xl font-bold lg:text-4xl underline decoration-primary">
-          {project.title}
-        </h4>
+        <div className="flex flex-row w-100 items-center gap-4">
+          <h4 className="text-2xl font-bold lg:text-4xl underline decoration-primary">
+            {project.title}
+          </h4>
+          <a
+            href={project.linkToBuild}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full w-6 h-6 font-bold  bg-white text-primary hover:bg-opacity-50 text-center"
+          >
+            +
+          </a>
+        </div>
         <div className="flex space-x-2 my-2 justify-center md:justify-start">
           {project?.technologies.reverse().map((skill: SkillType) => (
             <Image
