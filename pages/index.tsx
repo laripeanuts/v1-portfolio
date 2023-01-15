@@ -32,13 +32,7 @@ type Props = {
   socials: SocialType[];
 };
 
-export default function Home({
-  experiences,
-  projects,
-  profile,
-  skills,
-  socials,
-}: Props) {
+function Home({ experiences, projects, profile, skills, socials }: Props) {
   fetchExperiences();
   return (
     <>
