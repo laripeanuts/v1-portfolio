@@ -16,12 +16,11 @@ export const Experience = ({ experiences }: ExperienceProps) => {
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className=" w-full flex space-x-5 overflow-x-scroll snap-mandatory"
+        className=" w-full flex space-x-5 overflow-x-scroll snap-mandatory scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary"
       >
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        {experiences.map((experience: ExperienceType) => (
+          <ExperienceCard key={experience._id} experience={experience} />
+        ))}
       </motion.div>
     </div>
   );

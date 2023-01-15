@@ -23,21 +23,9 @@ export const Skills = ({ skills }: SkillsProps) => {
         transition={{ duration: 1.5 }}
         className="grid grid-cols-4 gap-6 mt-32 lg:mt-40 lg:grid lg:grid-cols-6 overflow-x-hidden overflow-y-scroll w-fit max-h-[400px] lg:max-h-[600px] scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary"
       >
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills.map((skill) => (
+          <Skill key={skill._id} skill={skill} />
+        ))}
       </motion.div>
     </div>
   );

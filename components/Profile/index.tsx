@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 import { ProfileType } from "../../@types/api";
+import { urlFor } from "../../sanity";
 import { ProfileBackground } from "../ProfileBackground";
 
 type ProfileProps = {
@@ -11,11 +12,7 @@ type ProfileProps = {
 
 export const Profile = ({ profile }: ProfileProps) => {
   const [text, count] = useTypewriter({
-    words: [
-      "<h1>Olá, me chamo Larissa</h1>",
-      "<h2>Sou dev Javascript + TypeScript</h2>",
-      "<span>Estudante de ciências da computação</span>",
-    ],
+    words: profile.subtitles,
     loop: true,
     delaySpeed: 1000,
     typeSpeed: 50,
@@ -25,7 +22,8 @@ export const Profile = ({ profile }: ProfileProps) => {
     <div className="h-screen flex flex-col items-center justify-center text-center space-y-8 overflow-hidden">
       <ProfileBackground />
       <Image
-        src="https://github.com/laripeanuts.png"
+        src={urlFor(profile?.profileImage).url()}
+        priority
         width={400}
         height={400}
         alt="Profile Pic"
@@ -33,7 +31,7 @@ export const Profile = ({ profile }: ProfileProps) => {
       />
       <div className="flex flex-col items-center justify-center px-6 pb-2 z-10">
         <h2 className="uppercase text-sm text-zinc-500 pb-2 tracking-[12px]">
-          Software Engineer
+          {profile.role}
         </h2>
         <h1 className="text-4xl lg:text-5xl font-semibold scroll-px-10 align-center px-4">
           <span>{text}</span>

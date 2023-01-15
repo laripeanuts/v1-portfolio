@@ -13,11 +13,9 @@ export const Projects = ({ projects }: ProjectsProps) => {
         Projetos
       </h3>
       <motion.div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary">
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
+        {projects.map((project) => (
+          <Project key={project._id} project={project} />
+        ))}
       </motion.div>
       <div className="w-full absolute top-[20%] bg-primary/30 left-0 h-[50vh] -skew-y-12" />
     </div>

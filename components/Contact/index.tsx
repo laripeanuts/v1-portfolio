@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
 
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { ProfileType } from "../../@types/api";
 
-type ContactProps = {};
+type ContactProps = {
+  profile: ProfileType;
+};
 
 type Inputs = {
   name: string;
@@ -43,7 +46,7 @@ const resolver: Resolver<Inputs> = async (values) => {
   };
 };
 
-export const Contact = ({}: ContactProps) => {
+export const Contact = ({ profile }: ContactProps) => {
   const {
     register,
     handleSubmit,
@@ -51,8 +54,6 @@ export const Contact = ({}: ContactProps) => {
   } = useForm<Inputs>({ resolver });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     window.location.href = `mailto:larissarabelolf@gmail.com?subject=${data.subject}&body=Oi, me chamo ${data.name} e queria mandar a seguinte mensagem: ${data.message}.Meu e-mail: ${data.email}`;
-
-    console.log(data);
   };
 
   return (
@@ -73,15 +74,15 @@ export const Contact = ({}: ContactProps) => {
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 items-center">
             <PhoneIcon className="text-primary h-6 w-6 animate-pulse" />
-            <span className="text-xl">+55 85 98709-0655</span>
+            <span className="text-xl">{profile?.phone}</span>
           </div>
           <div className="flex gap-4 items-center">
             <MapPinIcon className="text-primary h-6 w-6 animate-pulse" />
-            <span className="text-xl">Fortaleza/CE - Brasil</span>
+            <span className="text-xl">{profile?.address}</span>
           </div>
           <div className="flex gap-4 items-center">
             <EnvelopeIcon className="text-primary h-6 w-6 animate-pulse" />
-            <span className="text-xl">larissarabelolf@gmail.com</span>
+            <span className="text-xl">{profile?.email}</span>
           </div>
         </div>
         <form

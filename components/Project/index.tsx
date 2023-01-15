@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ProjectType, SkillType } from "../../@types/api";
+import { urlFor } from "../../sanity";
 
-type ProjectProps = {};
+type ProjectProps = {
+  project: ProjectType;
+};
 
-export const Project = ({}: ProjectProps) => {
+export const Project = ({ project }: ProjectProps) => {
   return (
     <motion.div
       initial={{ y: -200, opacity: 0 }}
@@ -12,33 +16,29 @@ export const Project = ({}: ProjectProps) => {
       className="w-full flex-shrink-0 snap-center flex flex-col items-center mx-auto justify-center gap-4 p-20 mt-10"
     >
       <Image
-        src="https://github.com/laripeanuts/raro-academy-videos/raw/develop/.github/temalight.jpg"
+        src={urlFor(project?.image).url()}
         alt="HTML"
         width={500}
         height={0}
-        className="w-[200px] lg:w-[300px]"
+        className="w-[250px] lg:w-[300px]"
       />
       <div className="max-w-6xl">
         <h4 className="text-2xl font-bold lg:text-4xl underline decoration-primary">
-          Raro Academy Videos
+          {project.title}
         </h4>
-        <p className="text-sm md:text-base mt-2">
-          Projeto final do curso de React da Raro Academy que visa melhorar o
-          modelo de distribuição do conteúdo dos cursos, criando um portal de
-          acesso aos materiais de vídeo, onde os usuários poderão visualizar o
-          conteúdo disponibilizados na plataforma, juntamente com um sistema de
-          comentário com likes e dislikes. Desenvolvido com Typescript, React,
-          Material Ui, Styled components. Acesse o{" "}
-          <a
-            className="hover:text-primary"
-            href="https://rarolabs.com.br/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            repositório
-          </a>{" "}
-          pra ver mais detalhes.
-        </p>
+        <div className="flex space-x-2 my-2 justify-center md:justify-start">
+          {project?.technologies.reverse().map((skill: SkillType) => (
+            <Image
+              src={urlFor(skill.image).url()}
+              alt={skill.title}
+              width={24}
+              height={24}
+              key={skill._id}
+              className="w-8 h-8 rounded-full"
+            />
+          ))}
+        </div>
+        <p className="text-sm md:text-base mt-2">{project.summary}</p>
       </div>
     </motion.div>
   );

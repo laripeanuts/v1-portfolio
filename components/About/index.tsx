@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ProfileType } from "../../@types/api";
+import { urlFor } from "../../sanity";
 
-type AboutProps = {};
+type AboutProps = {
+  profile: ProfileType;
+};
 
-export const About = ({}: AboutProps) => {
+export const About = ({ profile }: AboutProps) => {
   return (
     <div className="h-screen flex flex-col relative text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-20 uppercase tracking-[15px] text-zinc-500 text-2xl">
@@ -15,11 +19,12 @@ export const About = ({}: AboutProps) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Image
-          src="https://github.com/laripeanuts.png"
+          src={urlFor(profile?.profileImage).url()}
           width={400}
           height={400}
           alt="Profile Pic"
           className="-mb-20 md:mb-0 flex-shrink-0 rounded-full mt-14 w-32 y-32 object-cover md:rounded-lg md:min-w-[300px] md:h-[300px]"
+          priority
         />
       </motion.div>
 
@@ -35,29 +40,7 @@ export const About = ({}: AboutProps) => {
           como cheguei até aqui
         </h2>
         <p className="text-xs md:text-sm leading-normal">
-          Desenvolvo aplicações, principalmente para web. Consigo, através do
-          frontend, solucionar problemas, explorar minha criatividade e
-          aproveitar as noções de design que adquiri trabalhando dez anos com
-          arquitetura e modelagem 3D. Atualmente, além de trabalhar como
-          desenvolvedora na{" "}
-          <a
-            className="hover:text-primary"
-            href="https://rarolabs.com.br/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Raro Labs
-          </a>
-          , estou estudando e me especializando cada vez mais no frontend,
-          design systems, UI/UX design, apesar de sempre estar adquirindo também
-          conhecimentos em âmbitos de backend e mobile. Utilizando o ecossistema
-          JavaScript + TypeScript como tecnologias principais para
-          desenvolvimento. Curso o terceiro semestre de Análise e
-          Desenvolvimento de Sistemas. O que acredito ser meus pontos fortes em
-          softs kill são: senso de responsabilidade, facilidade em adaptação,
-          trabalho em equipe, autonomia na resolução de problemas e
-          principalmente interesse de aprender e estudar para contribuir no
-          desenvolvimento pessoal e profissional.
+          {profile?.backgroundInfo}
         </p>
       </motion.div>
     </div>

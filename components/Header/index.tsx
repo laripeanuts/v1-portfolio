@@ -24,7 +24,23 @@ export const Header = ({ socials }: HeaderProps) => {
         className="flex flex-row items-center"
       >
         <SocialIcon
-          url="https://www.linkedin.com/in/larissarabelolf/"
+          url={socials[1].link}
+          target={"_blank"}
+          bgColor="transparent"
+          fgColor={hoverTwitter ? "#523db2" : "lightgray"}
+          onMouseEnter={() => {
+            setHoverTwitter(true);
+          }}
+          onMouseLeave={() => {
+            setHoverTwitter(false);
+          }}
+          style={{
+            transform: hoverTwitter ? "scale(1.2)" : "scale(1)",
+            transition: "all 0.2s ease-in-out",
+          }}
+        />
+        <SocialIcon
+          url={socials[2].link}
           target={"_blank"}
           bgColor="transparent"
           fgColor={hoverLinkedin ? "#523db2" : "lightgray"}
@@ -40,7 +56,7 @@ export const Header = ({ socials }: HeaderProps) => {
           }}
         />
         <SocialIcon
-          url="https://github.com/laripeanuts"
+          url={socials[0].link}
           target={"_blank"}
           bgColor="transparent"
           fgColor={hoverGithub ? "#523db2" : "lightgray"}
@@ -52,22 +68,6 @@ export const Header = ({ socials }: HeaderProps) => {
           }}
           style={{
             transform: hoverGithub ? "scale(1.2)" : "scale(1)",
-            transition: "all 0.2s ease-in-out",
-          }}
-        />
-        <SocialIcon
-          url="https://twitter.com/laripeanuts"
-          target={"_blank"}
-          bgColor="transparent"
-          fgColor={hoverTwitter ? "#523db2" : "lightgray"}
-          onMouseEnter={() => {
-            setHoverTwitter(true);
-          }}
-          onMouseLeave={() => {
-            setHoverTwitter(false);
-          }}
-          style={{
-            transform: hoverTwitter ? "scale(1.2)" : "scale(1)",
             transition: "all 0.2s ease-in-out",
           }}
         />
