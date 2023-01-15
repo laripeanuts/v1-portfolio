@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prettier": "npx prettier --write ./pages/**/*.{js,jsx,ts,tsx} ./components/**/*.{js,jsx,ts,tsx} ./sanity/schemas/**/*.{js,jsx,ts,tsx}",
+    "prettier": "npx prettier --write ./pages/**/*.{js,jsx,ts,tsx} ./components/**/*.{js,jsx,ts,tsx}",
     "format": "pnpm run lint:fix && pnpm run prettier",
     "c": "npm run format && npx cz"
   },

@@ -2,7 +2,7 @@ import { ProjectType } from "../@types/api";
 
 export const fetchProjects = async () => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/getProjects`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`,
   );
 
   const data = await response.json();

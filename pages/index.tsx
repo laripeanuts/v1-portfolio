@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import { GetStaticProps } from "next";
+import { Fragment } from "react";
 
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProfile } from "../utils/fetchProfile";
@@ -32,10 +33,15 @@ type Props = {
   socials: SocialType[];
 };
 
-function Home({ experiences, projects, profile, skills, socials }: Props) {
-  fetchExperiences();
+export default function Home({
+  experiences,
+  projects,
+  profile,
+  skills,
+  socials,
+}: Props) {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Larissa Rabelo</title>
       </Head>
@@ -61,7 +67,7 @@ function Home({ experiences, projects, profile, skills, socials }: Props) {
           <Contact profile={profile} />
         </section>
       </main>
-    </>
+    </Fragment>
   );
 }
 
@@ -80,6 +86,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socials,
     },
-    revalidate: 100,
+    revalidate: 10,
   };
 };
