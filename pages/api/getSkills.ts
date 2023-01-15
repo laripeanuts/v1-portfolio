@@ -5,7 +5,7 @@ import { sanityClient } from "../../sanity";
 import { SkillType } from "../../@types/api";
 
 const query = groq`
-  *[_type == "skill"]
+  *[_type == "skill"] | order(_createdAt)
 `;
 
 type DataType = {

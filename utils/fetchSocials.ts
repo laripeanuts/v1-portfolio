@@ -1,4 +1,4 @@
-import { SocialType } from "../api";
+import { SocialType } from "../@types/api";
 
 export const fetchSocials = async () => {
   const response = await fetch(

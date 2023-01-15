@@ -2,11 +2,11 @@ import Head from "next/head";
 
 import { GetStaticProps } from "next";
 
-import { fetchExperiences } from "../@types/utils/fetchExperiences";
-import { fetchProfile } from "../@types/utils/fetchProfile";
-import { fetchProjects } from "../@types/utils/fetchProjects";
-import { fetchSkills } from "../@types/utils/fetchSkills";
-import { fetchSocials } from "../@types/utils/fetchSocials";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchProfile } from "../utils/fetchProfile";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchSocials } from "../utils/fetchSocials";
 
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
@@ -39,6 +39,7 @@ export default function Home({
   skills,
   socials,
 }: Props) {
+  fetchExperiences();
   return (
     <>
       <Head>
@@ -51,7 +52,7 @@ export default function Home({
           <Profile profile={profile} />
         </section>
         <section id="about" className="snap-center">
-          <About />
+          <About profile={profile} />
         </section>
         <section id="experiences" className="snap-center">
           <Experience experiences={experiences} />
@@ -63,7 +64,7 @@ export default function Home({
           <Projects projects={projects} />
         </section>
         <section id="contact" className="snap-center">
-          <Contact />
+          <Contact profile={profile} />
         </section>
       </main>
     </>

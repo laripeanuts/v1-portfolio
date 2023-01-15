@@ -5,7 +5,10 @@ import { sanityClient } from "../../sanity";
 import { ExperienceType } from "../../@types/api";
 
 const query = groq`
-  *[_type == "experience"]
+  *[_type == "experience"] {
+    ...,
+    technologies[]->
+  }
 `;
 
 type DataType = {

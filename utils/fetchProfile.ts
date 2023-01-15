@@ -1,4 +1,4 @@
-import { ProfileType } from "../api";
+import { ProfileType } from "../@types/api";
 
 export const fetchProfile = async () => {
   const response = await fetch(

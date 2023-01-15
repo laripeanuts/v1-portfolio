@@ -1,4 +1,4 @@
-import { ProjectType } from "../api";
+import { ProjectType } from "../@types/api";
 
 export const fetchProjects = async () => {
   const response = await fetch(
@@ -7,6 +7,5 @@ export const fetchProjects = async () => {
 
   const data = await response.json();
   const projects: ProjectType[] = data.projects;
-
   return projects;
 };

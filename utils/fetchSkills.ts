@@ -1,4 +1,4 @@
-import { SkillType } from "../api";
+import { SkillType } from "../@types/api";
 
 export const fetchSkills = async () => {
   const response = await fetch(

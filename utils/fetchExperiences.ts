@@ -1,4 +1,4 @@
-import { ExperienceType } from "../api";
+import { ExperienceType } from "../@types/api";
 
 export const fetchExperiences = async () => {
   const response = await fetch(

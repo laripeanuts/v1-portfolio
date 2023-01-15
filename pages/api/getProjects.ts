@@ -5,7 +5,10 @@ import { sanityClient } from "../../sanity";
 import { ProjectType } from "../../@types/api";
 
 const query = groq`
-  *[_type == "project"]
+  *[_type == "project"] | order(_createdAt) {
+    ...,
+    technologies[]->
+  }
 `;
 
 type DataType = {

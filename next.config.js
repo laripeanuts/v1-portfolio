@@ -10,6 +10,13 @@ module.exports = nextConfig;
 
 module.exports = {
   images: {
-    domains: ["github.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+        pathname: "/images/**",
+      },
+    ],
   },
 };

@@ -59,6 +59,7 @@ export interface ExperienceType extends SanityResponse {
   companyImage: SanityImage;
   companyName: string;
   dateStarted: string;
+  dateEnded: string;
   isCurrentJob: boolean;
   job: string;
   points: string[];
