@@ -33,7 +33,13 @@ type Props = {
   socials: SocialType[];
 };
 
-const Home = ({ experiences, projects, profile, skills, socials }: Props) => {
+export default function Home({
+  experiences,
+  projects,
+  profile,
+  skills,
+  socials,
+}: Props) {
   return (
     <React.Fragment>
       <Head>
@@ -69,9 +75,7 @@ const Home = ({ experiences, projects, profile, skills, socials }: Props) => {
       </main>
     </React.Fragment>
   );
-};
-
-export default Home;
+}
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const experiences: ExperienceType[] = await fetchExperiences();
@@ -88,6 +92,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socials,
     },
-    revalidate: 10,
+    revalidate: 60 * 60 * 2, // 2 hours
   };
 };

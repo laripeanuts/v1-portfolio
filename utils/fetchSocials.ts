@@ -6,7 +6,7 @@ export const fetchSocials = async () => {
   );
 
   const data = await response.json();
-  const sociais: SocialType[] = data.socials;
+  const socials: SocialType[] = data.socials;
 
-  return sociais;
+  return socials;
 };
