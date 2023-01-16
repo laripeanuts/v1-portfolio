@@ -10,14 +10,14 @@ type SkillsProps = {
 
 export const Skill = ({ skill }: SkillsProps) => {
   return (
-    <div className="group relative cursor-pointer flex w-20 h-20 lg:w-24 lg:h-24">
+    <div className="group relative cursor-pointer flex w-16 h-16 lg:w-24 lg:h-24">
       <motion.div>
         <Image
           src={urlFor(skill.image).url()}
           alt={skill.title}
           width={200}
           height={200}
-          className="rounded-full w-20 h-20 lg:w-24 lg:h-24 bg-zinc-900 object-cover filter group-hover:grayscale transition duration-300 ease-in-out"
+          className="rounded-full w-16 h-16 lg:w-24 lg:h-24 bg-zinc-900 object-cover filter group-hover:grayscale transition duration-300 ease-in-out"
         />
       </motion.div>
       <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-zinc-200 rounded-full w-full h-full">

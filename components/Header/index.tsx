@@ -23,7 +23,7 @@ export const Header = ({ socials }: HeaderProps) => {
         transition={{ duration: 1.3 }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
+        {/* <SocialIcon
           url={socials[1].link}
           target={"_blank"}
           bgColor="transparent"
@@ -38,7 +38,7 @@ export const Header = ({ socials }: HeaderProps) => {
             transform: hoverTwitter ? "scale(1.2)" : "scale(1)",
             transition: "all 0.2s ease-in-out",
           }}
-        />
+        /> */}
         <SocialIcon
           url={socials[2].link}
           target={"_blank"}
