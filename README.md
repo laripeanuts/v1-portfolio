@@ -27,11 +27,11 @@ Develop a project that applied the fundamental concepts of React, NextJS, Tailwi
 ### Web
 
 <p align="left">
-  <img src="./.github/../../../.github/web.png" alt="preview web app" width="80%">
+  <img src="./.github/web.png" alt="preview web app" width="80%">
 </p>
 <p align="left">
-  <img src="./.github/../../../.github/mobile-1.png" alt="preview web app" width="40%">
-  <img src="./.github/../../../.github/mobile-2.png" alt="preview web app" width="39%">
+  <img src="./.github/mobile-1.png" alt="preview web app" width="40%">
+  <img src="./.github/mobile-2.png" alt="preview web app" width="39%">
 </p>
 
 ## 💻 Made with
