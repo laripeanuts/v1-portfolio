@@ -12,7 +12,6 @@ type HeaderProps = {
 export const Header = ({ socials }: HeaderProps) => {
   const [hoverLinkedin, setHoverLinkedin] = useState(false);
   const [hoverGithub, setHoverGithub] = useState(false);
-  const [hoverTwitter, setHoverTwitter] = useState(false);
   const [hoverMail, setHoverMail] = useState(false);
 
   return (
@@ -23,22 +22,6 @@ export const Header = ({ socials }: HeaderProps) => {
         transition={{ duration: 1.3 }}
         className="flex flex-row items-center"
       >
-        {/* <SocialIcon
-          url={socials[1].link}
-          target={"_blank"}
-          bgColor="transparent"
-          fgColor={hoverTwitter ? "#523db2" : "lightgray"}
-          onMouseEnter={() => {
-            setHoverTwitter(true);
-          }}
-          onMouseLeave={() => {
-            setHoverTwitter(false);
-          }}
-          style={{
-            transform: hoverTwitter ? "scale(1.2)" : "scale(1)",
-            transition: "all 0.2s ease-in-out",
-          }}
-        /> */}
         <SocialIcon
           url={socials[2].link}
           target={"_blank"}
