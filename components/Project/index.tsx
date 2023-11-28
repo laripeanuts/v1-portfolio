@@ -37,16 +37,18 @@ export const Project = ({ project }: ProjectProps) => {
           </a>
         </div>
         <div className="flex space-x-2 my-2 justify-center md:justify-start">
-          {project?.technologies.reverse().map((skill: SkillType) => (
-            <Image
-              src={urlFor(skill.image).url()}
-              alt={skill.title}
-              width={24}
-              height={24}
-              key={skill._id}
-              className="w-8 h-8 rounded-full"
-            />
-          ))}
+          {project?.technologies
+            .reverse()
+            .map((skill: SkillType) => (
+              <Image
+                src={urlFor(skill.image).url()}
+                alt={skill.title}
+                width={24}
+                height={24}
+                key={skill._id}
+                className="w-8 h-8 rounded-full"
+              />
+            ))}
         </div>
         <p className="text-sm md:text-base mt-2">{project.summary}</p>
       </div>
