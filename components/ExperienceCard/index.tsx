@@ -23,11 +23,11 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         <p className="text-xs font-semibold">{`${experience?.dateStarted} - ${
           experience?.isCurrentJob ? "Atualmente" : experience?.dateEnded
         }`}</p>
-        <div className="flex space-x-2 my-2">
+        <div className="flex my-2 space-x-2">
           {experience?.technologies.map((skill: SkillType) => (
             <Image
               src={urlFor(skill.image).url()}
-              alt={skill.title}
+              alt={skill?.title}
               width={24}
               height={24}
               key={skill._id}
@@ -36,7 +36,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           ))}
         </div>
       </div>
-      <ul className="space-y-2 list-disc ml-4 text-sm">
+      <ul className="ml-4 space-y-2 text-sm list-disc">
         {experience?.points.map((point: string) => (
           <li key={point}>{point}</li>
         ))}

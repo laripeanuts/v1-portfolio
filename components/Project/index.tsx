@@ -13,7 +13,7 @@ export const Project = ({ project }: ProjectProps) => {
       initial={{ y: -200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="w-full flex-shrink-0 snap-center flex flex-col items-center mx-auto justify-center gap-4 p-20 mt-10"
+      className="flex flex-col items-center justify-center flex-shrink-0 w-full gap-4 p-20 mx-auto mt-10 snap-center"
     >
       <Image
         src={urlFor(project?.image).url()}
@@ -23,26 +23,26 @@ export const Project = ({ project }: ProjectProps) => {
         className="w-[250px] lg:w-[400px]"
       />
       <div className="max-w-6xl">
-        <div className="flex flex-row w-100 items-center gap-4">
-          <h4 className="text-2xl font-bold lg:text-4xl underline decoration-primary">
+        <div className="flex flex-row items-center gap-4 w-100">
+          <h4 className="text-2xl font-bold underline lg:text-4xl decoration-primary">
             {project.title}
           </h4>
           <a
             href={project.linkToBuild}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full w-6 h-6 font-bold  bg-white text-primary hover:bg-opacity-50 text-center"
+            className="w-6 h-6 font-bold text-center bg-white rounded-full text-primary hover:bg-opacity-50"
           >
             +
           </a>
         </div>
-        <div className="flex space-x-2 my-2 justify-center md:justify-start">
+        <div className="flex justify-center my-2 space-x-2 md:justify-start">
           {project?.technologies
             .reverse()
             .map((skill: SkillType) => (
               <Image
                 src={urlFor(skill.image).url()}
-                alt={skill.title}
+                alt={skill?.title}
                 width={24}
                 height={24}
                 key={skill._id}
@@ -50,7 +50,7 @@ export const Project = ({ project }: ProjectProps) => {
               />
             ))}
         </div>
-        <p className="text-sm md:text-base mt-2">{project.summary}</p>
+        <p className="mt-2 text-sm md:text-base">{project.summary}</p>
       </div>
     </motion.div>
   );
