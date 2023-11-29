@@ -22,7 +22,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           href={experience?.companyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-2xl font-light hover:underline"
+          className="text-2xl font-light cursor-pointer hover:underline decoration-primary"
         >
           {experience?.companyName}
         </a>
