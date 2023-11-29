@@ -8,6 +8,8 @@ type ProjectProps = {
 };
 
 export const Project = ({ project }: ProjectProps) => {
+  if (!project) return null;
+
   return (
     <motion.div
       initial={{ y: -200, opacity: 0 }}
@@ -16,7 +18,7 @@ export const Project = ({ project }: ProjectProps) => {
       className="flex flex-col items-center justify-center flex-shrink-0 w-full gap-4 p-20 mx-auto mt-10 snap-center"
     >
       <Image
-        src={urlFor(project?.image).url()}
+        src={urlFor(project?.image)?.url()}
         alt="HTML"
         width={500}
         height={0}
@@ -37,18 +39,18 @@ export const Project = ({ project }: ProjectProps) => {
           </a>
         </div>
         <div className="flex justify-center my-2 space-x-2 md:justify-start">
-          {project?.technologies
+          {/* {project?.technologies?.length > 0 && project?.technologies
             .reverse()
             .map((skill: SkillType) => (
               <Image
-                src={urlFor(skill.image).url()}
-                alt={skill?.title}
-                width={24}
-                height={24}
-                key={skill._id}
-                className="w-8 h-8 rounded-full"
-              />
-            ))}
+              src={urlFor(skill?.image)?.url()}
+              alt="HTML"
+              width={24}
+              height={24}
+              className="w-[24px] lg:w-[24px]"
+              key={skill._id}
+            />
+            ))} */}
         </div>
         <p className="mt-2 text-sm md:text-base">{project.summary}</p>
       </div>

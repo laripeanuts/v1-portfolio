@@ -46,13 +46,13 @@ export default function Home({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
-          name="Larissa Rabelo - Portfolio Desenvolvedora Javascript/TypeScript"
-          content="Portfolio Desenvolvedora Javascript/TypeScript"
+          name="Larissa Rabelo - Desenvolvedora Web"
+          content="Desenvolvedora Web"
         />
         <title>Larissa Rabelo</title>
       </Head>
 
-      <main className="bg-zinc-800 text-zinc-100 color-zinc-100 h-screen snap snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary">
+      <main className="z-0 h-screen overflow-x-hidden overflow-y-scroll bg-zinc-800 text-zinc-100 color-zinc-100 snap snap-y snap-mandatory scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary">
         <Header socials={socials} />
         <section id="profile" className="snap-start">
           <Profile profile={profile} />

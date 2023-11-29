@@ -58,6 +58,7 @@ export interface ExperienceType extends SanityResponse {
   _id: string;
   companyImage: SanityImage;
   companyName: string;
+  companyUrl: string;
   dateStarted: string;
   dateEnded: string;
   isCurrentJob: boolean;

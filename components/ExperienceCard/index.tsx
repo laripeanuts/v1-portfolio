@@ -18,7 +18,14 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         className="relative rounded-full w-28 h-28 mx-auto object-cover md:w-[100px] md:h-[100px]"
       />
       <div>
-        <h4 className="text-2xl font-light">{experience?.companyName}</h4>
+        <a
+          href={experience?.companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-2xl font-light hover:underline"
+        >
+          {experience?.companyName}
+        </a>
         <p className="font-bold">{experience?.job}</p>
         <p className="text-xs font-semibold">{`${experience?.dateStarted} - ${
           experience?.isCurrentJob ? "Atualmente" : experience?.dateEnded

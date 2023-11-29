@@ -23,7 +23,7 @@ export const Header = ({ socials }: HeaderProps) => {
         className="flex flex-row items-center"
       >
         <SocialIcon
-          url={socials[2].link}
+          url={socials[1].link}
           target={"_blank"}
           bgColor="transparent"
           fgColor={hoverLinkedin ? "#523db2" : "lightgray"}
@@ -56,7 +56,7 @@ export const Header = ({ socials }: HeaderProps) => {
         />
       </motion.div>
 
-      <div className="uppercase text-sm flex flex-row items-center cursor-pointer hover:text-primary">
+      <div className="flex flex-row items-center text-sm uppercase cursor-pointer hover:text-primary">
         <SocialIcon
           url="#contact"
           network="email"
