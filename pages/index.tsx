@@ -11,7 +11,7 @@ import { fetchSocials } from "../utils/fetchSocials";
 
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
-import { Experience } from "../components/Experience";
+import { Experiences } from "../components/Experiences";
 import { Header } from "../components/Header";
 import { Profile } from "../components/Profile";
 import { Projects } from "../components/Projects";
@@ -61,7 +61,7 @@ export default function Home({
           <About profile={profile} />
         </section>
         <section id="experiences" className="snap-center">
-          <Experience experiences={experiences} />
+          <Experiences experiences={experiences} />
         </section>
         <section id="skills" className="snap-center">
           <Skills skills={skills} />
