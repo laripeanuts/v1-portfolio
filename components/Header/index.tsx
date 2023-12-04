@@ -56,7 +56,7 @@ export const Header = ({ socials }: HeaderProps) => {
         />
       </motion.div>
 
-      <div className="flex flex-row items-center text-sm uppercase cursor-pointer hover:text-primary">
+      <div className="flex flex-row items-center text-sm uppercase cursor-pointer">
         <SocialIcon
           url="#contact"
           network="email"
@@ -72,8 +72,8 @@ export const Header = ({ socials }: HeaderProps) => {
             transform: hoverMail ? "scale(1.2)" : "scale(1)",
             transition: "all 0.2s ease-in-out",
           }}
+
         />
-        <span className="hidden md:inline-flex">Entre em contato</span>
       </div>
     </header>
   );
