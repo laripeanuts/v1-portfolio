@@ -24,6 +24,7 @@ import {
   SkillType,
   SocialType,
 } from "../@types/api";
+import { Section } from "../components/Section";
 
 type Props = {
   experiences: ExperienceType[];
@@ -41,39 +42,39 @@ export default function Home({
   socials,
 }: Props) {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
-          name="Larissa Rabelo - Desenvolvedora Web"
-          content="Desenvolvedora Web"
+          name="Larissa Rabelo - Fullstack Developer"
+          content="Fullstack Developer Portfolio"
         />
         <title>Larissa Rabelo</title>
       </Head>
 
       <main className="z-0 h-screen overflow-x-hidden overflow-y-scroll bg-zinc-800 text-zinc-100 color-zinc-100 snap snap-y snap-mandatory scrollbar-thin scrollbar-track-zinc-900 scrollbar-thumb-primary">
         <Header socials={socials} />
-        <section id="profile" className="snap-start">
+        <Section id="profile" className="snap-start">
           <Profile profile={profile} />
-        </section>
-        <section id="about" className="snap-center">
+        </Section>
+        <Section id="about" className="snap-center" title="Sobre">
           <About profile={profile} />
-        </section>
-        <section id="experiences" className="snap-center">
+        </Section>
+        <Section id="experiences" className="snap-center" title="Experiências">
           <Experiences experiences={experiences} />
-        </section>
-        <section id="skills" className="snap-center">
+        </Section>
+        <Section id="skills" className="snap-center" title="Habilidades">
           <Skills skills={skills} />
-        </section>
-        <section id="projects" className="snap-center">
+        </Section>
+        <Section id="projects" className="snap-center" title="Projetos">
           <Projects projects={projects} />
-        </section>
-        <section id="contact" className="snap-center">
+        </Section>
+        <Section id="contact" className="snap-center" title="Contato">
           <Contact profile={profile} />
-        </section>
+        </Section>
       </main>
-    </React.Fragment>
+    </>
   );
 }
 
