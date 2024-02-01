@@ -41,7 +41,7 @@ export const Profile = ({ profile }: ProfileProps) => {
           <Link href="#about">
             <div className="btnNav">Sobre</div>
           </Link>
-          <Link href="#experience">
+          <Link href="#experiences">
             <div className="btnNav">Experiências</div>
           </Link>
           <Link href="#skills">
