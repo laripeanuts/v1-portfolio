@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
 import { SocialType } from "../../@types/api";
+import { IntlButton } from "./IntlButton";
 
 type HeaderProps = {
   socials: SocialType[];
@@ -54,9 +55,6 @@ export const Header = ({ socials }: HeaderProps) => {
             transition: "all 0.2s ease-in-out",
           }}
         />
-      </motion.div>
-
-      <div className="flex flex-row items-center text-sm uppercase cursor-pointer">
         <SocialIcon
           url="#contact"
           network="email"
@@ -72,8 +70,13 @@ export const Header = ({ socials }: HeaderProps) => {
             transform: hoverMail ? "scale(1.2)" : "scale(1)",
             transition: "all 0.2s ease-in-out",
           }}
-
         />
+      </motion.div>
+
+      <div className="flex flex-row items-center gap-4 uppercase">
+        <IntlButton intl="pt-BR" label="Português" />
+        <span>|</span>
+        <IntlButton intl="en" label="English" />
       </div>
     </header>
   );

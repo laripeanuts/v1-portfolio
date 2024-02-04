@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
 
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
@@ -15,6 +17,8 @@ type Inputs = {
 };
 
 const resolver: Resolver<Inputs> = async (values) => {
+  const t = await getTranslations("home.contact");
+
   return {
     values:
       values.name || values.email || values.subject || values.message
@@ -25,19 +29,19 @@ const resolver: Resolver<Inputs> = async (values) => {
         ? {
             name: {
               type: "required",
-              message: "Nome não pode ser vazio",
+              message: t("form.errors.name"),
             },
             email: {
               type: "required",
-              message: "E-mail não pode ser vazio",
+              message: t("form.errors.email"),
             },
             subject: {
               type: "required",
-              message: "Assunto não pode ser vazio",
+              message: t("form.errors.subject"),
             },
             message: {
               type: "required",
-              message: "Mensagem não pode ser vazia",
+              message: t("form.errors.message"),
             },
           }
         : {},
@@ -45,18 +49,19 @@ const resolver: Resolver<Inputs> = async (values) => {
 };
 
 export const Contact = ({ profile }: ContactProps) => {
+  const t = useTranslations("home.contact");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({ resolver });
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     window.location.href = `mailto:larissarabelolf@gmail.com?subject=${data.subject}&body=Oi, me chamo ${data.name} e queria mandar a seguinte mensagem: ${data.message}. Meu e-mail: ${data.email}`;
   };
 
   return (
-    <div>
-      {" "}
+    <div className="flex flex-col gap-4">
       <h4 className="text-2xl font-bold underline lg:text-4xl decoration-primary">
         Vamos conversar!
       </h4>
@@ -85,7 +90,7 @@ export const Contact = ({ profile }: ContactProps) => {
             name="name"
             id="name"
             className="contactInput w-[110px]"
-            placeholder="Nome"
+            placeholder={t("form.fields.name")}
           />
           <input
             {...register("email")}
@@ -93,7 +98,7 @@ export const Contact = ({ profile }: ContactProps) => {
             name="email"
             id="email"
             className="contactInput w-[110px]"
-            placeholder="E-mail"
+            placeholder={t("form.fields.email")}
           />
         </div>
         <input
@@ -102,20 +107,20 @@ export const Contact = ({ profile }: ContactProps) => {
           name="subject"
           id="subject"
           className="contactInput"
-          placeholder="Assunto"
+          placeholder={t("form.fields.subject")}
         />
         <textarea
           {...register("message")}
           name="message"
           id="message"
           className="py-4 contactInput"
-          placeholder="Mensagem"
+          placeholder={t("form.fields.message")}
         />
         <button
           type="submit"
-          className="p-2 rounded-md bg-primary hover:bg-primaryDark"
+          className="p-2 rounded-md bg-primary hover:bg-primaryDark disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-primary"
         >
-          Enviar
+          {t("form.submit")}
         </button>
       </form>
       <div className="flex flex-col gap-1">

@@ -1,1 +1,0 @@
-export type IntlLanguages = "pt-br" | "en-us";

@@ -1,13 +1,12 @@
 import Head from "next/head";
 
 import { GetStaticProps } from "next";
-import React from "react";
 
-import { fetchExperiences } from "../utils/fetchExperiences";
-import { fetchProfile } from "../utils/fetchProfile";
-import { fetchProjects } from "../utils/fetchProjects";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "../utils/fetchSocials";
+import { fetchExperiences } from "../services/fetchExperiences";
+import { fetchProfile } from "../services/fetchProfile";
+import { fetchProjects } from "../services/fetchProjects";
+import { fetchSkills } from "../services/fetchSkills";
+import { fetchSocials } from "../services/fetchSocials";
 
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
@@ -17,6 +16,7 @@ import { Profile } from "../components/Profile";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 
+import { useTranslations } from "next-intl";
 import {
   ExperienceType,
   ProfileType,
@@ -32,6 +32,7 @@ type Props = {
   projects: ProjectType[];
   skills: SkillType[];
   socials: SocialType[];
+  messages: string;
 };
 
 export default function Home({
@@ -41,6 +42,8 @@ export default function Home({
   skills,
   socials,
 }: Props) {
+  const t = useTranslations("home");
+
   return (
     <>
       <Head>
@@ -58,19 +61,31 @@ export default function Home({
         <Section id="profile" className="snap-start">
           <Profile profile={profile} />
         </Section>
-        <Section id="about" className="snap-center" title="Sobre">
+        <Section id="about" className="snap-center" title={t("about.title")}>
           <About profile={profile} />
         </Section>
-        <Section id="experiences" className="snap-center" title="Experiências">
+        <Section
+          id="experiences"
+          className="snap-center"
+          title={t("experiences.title")}
+        >
           <Experiences experiences={experiences} />
         </Section>
-        <Section id="skills" className="snap-center" title="Habilidades">
+        <Section id="skills" className="snap-center" title={t("skills.title")}>
           <Skills skills={skills} />
         </Section>
-        <Section id="projects" className="snap-center" title="Projetos">
+        <Section
+          id="projects"
+          className="snap-center"
+          title={t("projects.title")}
+        >
           <Projects projects={projects} />
         </Section>
-        <Section id="contact" className="snap-center" title="Contato">
+        <Section
+          id="contact"
+          className="snap-center"
+          title={t("contact.title")}
+        >
           <Contact profile={profile} />
         </Section>
       </main>
@@ -78,7 +93,7 @@ export default function Home({
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const experiences: ExperienceType[] = await fetchExperiences();
   const profile: ProfileType = await fetchProfile();
   const projects: ProjectType[] = await fetchProjects();
@@ -92,6 +107,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       skills,
       socials,
+      messages: (await import(`../lang/${context.locale}.json`)).default,
     },
     revalidate: 60, // 60 seconds
   };

@@ -1,0 +1,40 @@
+{
+  "home": {
+    "about": {
+      "title": "Sobre",
+      "subtitle": {
+        "first": "Alguns ",
+        "main": "detalhes",
+        "last": " de como cheguei até aqui!"
+      }
+    },
+    "experiences": {
+      "title": "Experiências"
+    },
+    "skills": {
+      "title": "Conhecimentos"
+    },
+    "projects": {
+      "title": "Projetos"
+    },
+    "contact": {
+      "title": "Contato",
+      "subtitle": "Vamos conversar!",
+      "form": {
+        "fields": {
+          "name": "Nome",
+          "email": "E-mail",
+          "subject": "Assunto",
+          "message": "Mensagem"
+        },
+        "errors": {
+          "name": "Por favor, preencha seu nome",
+          "email": "Por favor, preencha um e-mail válido",
+          "subject": "Por favor, preencha um assunto",
+          "message": "Por favor, preencha uma mensagem"
+        },
+        "submit": "Enviar"
+      }
+    }
+  }
+}
