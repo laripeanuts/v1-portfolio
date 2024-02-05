@@ -63,7 +63,7 @@ export const Contact = ({ profile }: ContactProps) => {
   return (
     <div className="flex flex-col gap-4">
       <h4 className="text-2xl font-bold underline lg:text-4xl decoration-primary">
-        Vamos conversar!
+        {t("subtitle")}
       </h4>
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-4">
