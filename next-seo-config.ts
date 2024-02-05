@@ -39,7 +39,7 @@ export const SEO: NextSeoProps = {
   ],
   twitter: {
     handle: "@laripeanuts",
-    site: "@laripeanuts",
+    site: "@site",
     cardType: "summary_large_image",
   },
 };

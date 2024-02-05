@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
       messages={pageProps.messages}
       locale={router.locale}
     >
-      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </NextIntlClientProvider>
   );
