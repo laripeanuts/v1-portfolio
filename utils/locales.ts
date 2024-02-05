@@ -9,14 +9,14 @@ export const localeAdapter = <T extends ObjectType>(
     return object;
   }
 
-  let localeObject = { ...object };
+  const localeObject = { ...(object as ObjectType) };
 
   propertiesToAdapt.forEach((property) => {
     const localizedProperty = `${property}_${locale.replace("-", "")}`;
-    if (object.hasOwnProperty(property)) {
-      localeObject[property] = object[localizedProperty] || object[property];
+    if (localizedProperty in object) {
+      localeObject[property] = object[localizedProperty];
     }
   });
 
-  return localeObject;
+  return localeObject as T;
 };
