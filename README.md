@@ -21,6 +21,9 @@ Develop a project that applied the fundamental concepts of React, NextJS, Tailwi
 - [x] Integrate project with CMS Sanity
 - [x] Use Static Server Render with NextJS
 - [x] Complete documentation portfolio
+- [x] Use internationalization with NextJS
+- [x] SEO Optimization
+- [x] Google Analytics Integration
 
 ## 🥳 Application
 
