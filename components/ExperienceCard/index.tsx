@@ -2,12 +2,24 @@ import Image from "next/image";
 
 import { ExperienceType, SkillType } from "../../@types/api";
 import { urlFor } from "../../sanity";
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
+import { localeAdapter } from "../../utils/locales";
 
 type ExperienceCardProps = {
   experience: ExperienceType;
 };
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+  const t = useTranslations("home.experience");
+  const { locale } = useRouter();
+  const localeExperience = useMemo(
+    () =>
+      localeAdapter(experience, locale, ["job", "points"]),
+    [experience, locale],
+  );
+  
   return (
     <article className="bg-zinc-700 text-left rounded-lg flex flex-col space-y-4 flex-shrink-0 items-start p-4 mt-20 w-[300px] lg:w-[500px] snap-center opacity-60 hover:opacity-100 transition-opacity overflow-hidden duration-500 ease-in-out">
       <div className="flex gap-4">
@@ -27,9 +39,9 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           >
             {experience?.companyName}
           </a>
-          <p className="font-bold">{experience?.job}</p>
+          <p className="font-bold">{localeExperience?.job}</p>
           <p className="text-xs font-semibold">{`${experience?.dateStarted} - ${
-            experience?.isCurrentJob ? "Atualmente" : experience?.dateEnded
+            experience?.isCurrentJob ? t('current') : experience?.dateEnded
           }`}</p>
           <div className="flex my-2 space-x-2">
             {experience?.technologies.map((skill: SkillType) => (
@@ -46,7 +58,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         </div>
       </div>
       <ul className="ml-4 space-y-2 text-sm list-disc">
-        {experience?.points.map((point: string) => (
+        {localeExperience?.points.map((point: string) => (
           <li key={point}>{point}</li>
         ))}
       </ul>

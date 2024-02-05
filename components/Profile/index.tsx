@@ -2,8 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
 import { ProfileType } from "../../@types/api";
 import { urlFor } from "../../sanity";
+import { localeAdapter } from "../../utils/locales";
 import { ProfileBackground } from "../ProfileBackground";
 
 type ProfileProps = {
@@ -11,8 +15,15 @@ type ProfileProps = {
 };
 
 export const Profile = ({ profile }: ProfileProps) => {
+  const t = useTranslations("home");
+  const { locale } = useRouter();
+  const localeProfile = useMemo(
+    () => localeAdapter(profile, locale, ["role", "subtitles"]),
+    [profile, locale],
+  );
+
   const [text, count] = useTypewriter({
-    words: profile.subtitles,
+    words: localeProfile.subtitles,
     loop: true,
     delaySpeed: 1000,
     typeSpeed: 50,
@@ -31,7 +42,7 @@ export const Profile = ({ profile }: ProfileProps) => {
       />
       <div className="z-10 flex flex-col items-center justify-center w-full px-6 pb-2">
         <h2 className="uppercase text-sm text-zinc-500 pb-2 tracking-[12px] w-full">
-          {profile.role}
+          {localeProfile.role}
         </h2>
         <h1 className="px-4 text-4xl font-semibold lg:text-5xl scroll-px-10 align-center min-h-[17vh] w-full">
           <span>{text}</span>
@@ -39,16 +50,16 @@ export const Profile = ({ profile }: ProfileProps) => {
         </h1>
         <div className="flex flex-col flex-wrap items-center md:flex-row w-100 justify-evenly">
           <Link href="#about">
-            <div className="btnNav">Sobre</div>
+            <div className="btnNav">{t("about.title")}</div>
           </Link>
           <Link href="#experiences">
-            <div className="btnNav">Experiências</div>
+            <div className="btnNav">{t("experiences.title")}</div>
           </Link>
           <Link href="#skills">
-            <div className="btnNav">Conhecimento</div>
+            <div className="btnNav">{t("skills.title")}</div>
           </Link>
           <Link href="#projects">
-            <div className="btnNav">Projetos</div>
+            <div className="btnNav">{t("projects.title")}</div>
           </Link>
         </div>
       </div>

@@ -9,7 +9,8 @@
       }
     },
     "experiences": {
-      "title": "Experiences"
+      "title": "Experiences",
+      "current": "Current"
     },
     "skills": {
       "title": "Skills"
