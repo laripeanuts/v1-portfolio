@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import { ExperienceType, SkillType } from "../../@types/api";
-import { urlFor } from "../../sanity";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
+import { ExperienceType, SkillType } from "../../@types/api";
+import { urlFor } from "../../sanity";
 import { localeAdapter } from "../../utils/locales";
 
 type ExperienceCardProps = {
@@ -20,7 +20,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   );
 
   return (
-    <article className="bg-zinc-700 text-left rounded-lg flex flex-col space-y-4 flex-shrink-0 items-start p-4 mt-20 w-[300px] lg:w-[500px] snap-center opacity-60 hover:opacity-100 transition-opacity overflow-hidden duration-500 ease-in-out">
+    <article className="bg-zinc-700 text-left rounded-lg flex flex-col space-y-4 flex-shrink-0 items-start p-4 mt-20 w-[300px] lg:w-[500px] snap-center opacity-60 hover:opacity-100 transition-opacity overflow-hidden duration-500 ease-in-out max-h-[70vh] md:max-h-[80vh]">
       <div className="flex gap-4">
         <Image
           src={urlFor(experience?.companyImage).url()}
