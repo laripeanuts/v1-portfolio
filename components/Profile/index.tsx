@@ -22,6 +22,29 @@ export const Profile = ({ profile }: ProfileProps) => {
     [profile, locale],
   );
 
+  const menuItems = [
+    {
+      link: "#about",
+      title: t("about.title"),
+    },
+    {
+      link: "#experiences",
+      title: t("experiences.title"),
+    },
+    {
+      link: "#skills",
+      title: t("skills.title"),
+    },
+    {
+      link: "#projects",
+      title: t("projects.title"),
+    },
+    {
+      link: "#contact",
+      title: t("contact.title"),
+    },
+  ];
+
   const [text, count] = useTypewriter({
     words: localeProfile.subtitles,
     loop: true,
@@ -49,18 +72,11 @@ export const Profile = ({ profile }: ProfileProps) => {
           <Cursor cursorColor="#523db2" />
         </h1>
         <div className="flex flex-col flex-wrap items-center md:flex-row w-100 justify-evenly">
-          <Link href="#about">
-            <div className="btnNav">{t("about.title")}</div>
-          </Link>
-          <Link href="#experiences">
-            <div className="btnNav">{t("experiences.title")}</div>
-          </Link>
-          <Link href="#skills">
-            <div className="btnNav">{t("skills.title")}</div>
-          </Link>
-          <Link href="#projects">
-            <div className="btnNav">{t("projects.title")}</div>
-          </Link>
+          {menuItems.map((item, index) => (
+            <Link href={item.link} key={index}>
+              <div className="btnNav">{item.title}</div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
