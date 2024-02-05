@@ -37,7 +37,7 @@ export const Section = ({
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col items-center justify-between gap-2 mt-20 md:mt-10 md:flex-row md:p-10 md:gap-10"
+        className="flex flex-col items-center justify-between w-full gap-2 mt-20 md:mt-10 md:flex-row md:p-10 md:gap-10"
       >
         {children}
       </motion.div>

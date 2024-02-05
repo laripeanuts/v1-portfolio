@@ -15,8 +15,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   const t = useTranslations("home.experiences");
   const { locale } = useRouter();
   const localeExperience = useMemo(
-    () =>
-      localeAdapter(experience, locale, ["job", "points"]),
+    () => localeAdapter(experience, locale, ["job", "points"]),
     [experience, locale],
   );
 
@@ -41,9 +40,9 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           </a>
           <p className="font-bold">{localeExperience?.job}</p>
           <p className="text-xs font-semibold">{`${experience?.dateStarted} - ${
-            experience?.isCurrentJob ? t('current') : experience?.dateEnded
+            experience?.isCurrentJob ? t("current") : experience?.dateEnded
           }`}</p>
-          <div className="flex my-2 space-x-2">
+          <div className="flex flex-wrap gap-2 my-2">
             {experience?.technologies.map((skill: SkillType) => (
               <Image
                 src={urlFor(skill.image).url()}

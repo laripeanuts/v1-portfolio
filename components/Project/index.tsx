@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ProjectType, SkillType } from "../../@types/api";
-import { urlFor } from "../../sanity";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
+import { ProjectType, SkillType } from "../../@types/api";
+import { urlFor } from "../../sanity";
 import { localeAdapter } from "../../utils/locales";
 
 type ProjectProps = {
@@ -23,7 +23,7 @@ export const Project = ({ project }: ProjectProps) => {
       initial={{ y: -200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="flex flex-col items-center justify-center flex-shrink-0 w-full gap-4 p-20 mx-auto mt-10 snap-center"
+      className="flex flex-col items-center justify-center flex-shrink-0 w-full gap-4 p-4 mx-auto mt-10 md:p-20 snap-center"
     >
       <Image
         src={urlFor(project?.image)?.url()}
@@ -46,21 +46,18 @@ export const Project = ({ project }: ProjectProps) => {
             +
           </a>
         </div>
-        {/* <div className="flex justify-center my-2 space-x-2 md:justify-start">
-          {project?.technologies?.length > 0 &&
-            project?.technologies
-              .reverse()
-              .map((skill: SkillType) => (
-                <Image
-                  src={urlFor(skill?.image)?.url()}
-                  alt="HTML"
-                  width={24}
-                  height={24}
-                  className="w-[24px] lg:w-[24px]"
-                  key={skill._id}
-                />
-              ))}
-        </div> */}
+        <div className="flex justify-center my-2 space-x-2 md:justify-start">
+          {project?.technologies.map((skill: SkillType) => (
+            <Image
+              src={urlFor(skill.image).url()}
+              alt={skill?.title}
+              width={24}
+              height={24}
+              key={skill._id}
+              className="w-8 h-8 rounded-full"
+            />
+          ))}
+        </div>
         <p className="mt-2 text-sm md:text-base">{projectLocale.summary}</p>
       </div>
     </motion.div>
