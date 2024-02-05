@@ -12,14 +12,14 @@ type ExperienceCardProps = {
 };
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
-  const t = useTranslations("home.experience");
+  const t = useTranslations("home.experiences");
   const { locale } = useRouter();
   const localeExperience = useMemo(
     () =>
       localeAdapter(experience, locale, ["job", "points"]),
     [experience, locale],
   );
-  
+
   return (
     <article className="bg-zinc-700 text-left rounded-lg flex flex-col space-y-4 flex-shrink-0 items-start p-4 mt-20 w-[300px] lg:w-[500px] snap-center opacity-60 hover:opacity-100 transition-opacity overflow-hidden duration-500 ease-in-out">
       <div className="flex gap-4">
