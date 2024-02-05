@@ -22,6 +22,7 @@
     "next": "^14.0.3",
     "next-intl": "^3.5.4",
     "next-sanity": "^6.1.0",
+    "next-seo": "^6.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.48.2",

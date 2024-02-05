@@ -32,6 +32,9 @@ dependencies:
   next-sanity:
     specifier: ^6.1.0
     version: 6.1.0(@sanity/client@6.9.0)(@sanity/icons@2.7.0)(@sanity/types@3.20.2)(@sanity/ui@1.9.3)(next@14.0.3)(react@18.2.0)(sanity@3.20.2)(styled-components@5.3.11)
+  next-seo:
+    specifier: ^6.4.0
+    version: 6.4.0(next@14.0.3)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -4870,6 +4873,18 @@ packages:
       styled-components: 5.3.11(@babel/core@7.23.3)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /next-seo@6.4.0(next@14.0.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-XQFxkOL2hw0YE+P100HbI3EAvcludlHPxuzMgaIjKb7kPK0CvjGvLFjd9hszZFEDc5oiQkGFA8+cuWcnip7eYA==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 14.0.3(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next@14.0.3(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0):
