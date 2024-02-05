@@ -33,30 +33,32 @@ export const Project = ({ project }: ProjectProps) => {
         className="w-[250px] lg:w-[400px]"
       />
       <div className="max-w-6xl">
-        <div className="flex flex-row items-center gap-4 w-100">
-          <h4 className="text-2xl font-bold underline lg:text-4xl decoration-primary">
-            {project.title}
-          </h4>
-          <a
-            href={project.linkToBuild}
-            target="_blank"
-            rel="noreferrer"
-            className="w-6 h-6 font-bold text-center bg-white rounded-full text-primary hover:bg-opacity-50"
-          >
-            +
-          </a>
-        </div>
-        <div className="flex justify-center my-2 space-x-2 md:justify-start">
-          {project?.technologies.map((skill: SkillType) => (
-            <Image
-              src={urlFor(skill.image).url()}
-              alt={skill?.title}
-              width={24}
-              height={24}
-              key={skill._id}
-              className="w-8 h-8 rounded-full"
-            />
-          ))}
+        <div className="flex justify-between">
+          <div className="flex flex-row items-center gap-4 w-100">
+            <h4 className="text-2xl font-bold underline lg:text-4xl decoration-primary">
+              {project.title}
+            </h4>
+            <a
+              href={project.linkToBuild}
+              target="_blank"
+              rel="noreferrer"
+              className="w-6 h-6 font-bold text-center bg-white rounded-full text-primary hover:bg-opacity-50"
+            >
+              +
+            </a>
+          </div>
+          <div className="flex justify-center my-2 space-x-2 md:justify-start">
+            {project?.technologies.map((skill: SkillType) => (
+              <Image
+                src={urlFor(skill.image).url()}
+                alt={skill?.title}
+                width={24}
+                height={24}
+                key={skill._id}
+                className="w-8 h-8 rounded-full"
+              />
+            ))}
+          </div>
         </div>
         <p className="mt-2 text-sm md:text-base">{projectLocale.summary}</p>
       </div>
